@@ -5,6 +5,16 @@ Infor's official Windows installer into a native macOS install, with an
 `IPDesigner.app` you can launch from Finder or the Dock. The build supports both
 Apple silicon and Intel Macs.
 
+## How it works
+
+The IPD installer contains a standard Eclipse application, and most of Infor's
+code doesn't depend on Windows. The build swaps the Windows-only components
+for their macOS equivalents. It then applies a handful of small, checked
+patches where Infor's code assumes Windows, such as backslash paths, dialog
+behaviour and keyboard handling.
+[docs/TECHNICAL.md](docs/TECHNICAL.md) explains each problem, how it was found
+and how it's patched.
+
 Only the build scripts and small patches are here. **No Infor software is
 included.** You need your own licensed copy of the IPD installer (`IPD_*.jar`),
 and the build converts it on your machine.
@@ -100,16 +110,6 @@ first.
 
 More cases are covered in the
 [technical notes](docs/TECHNICAL.md#troubleshooting).
-
-## How it works
-
-The IPD installer contains a standard Eclipse application, and most of Infor's
-code doesn't depend on Windows. The build swaps the Windows-only components
-for their macOS equivalents. It then applies a handful of small, checked
-patches where Infor's code assumes Windows, such as backslash paths, dialog
-behaviour and keyboard handling.
-[docs/TECHNICAL.md](docs/TECHNICAL.md) explains each problem, how it was found
-and how it's patched.
 
 ## Disclaimer
 
