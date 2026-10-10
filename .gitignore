@@ -1,0 +1,24 @@
+# Build output (regenerate with ./build-ipd-macos.sh)
+IPDesigner/
+
+# Downloaded SWT archives (fetch with ./fetch-swt.command)
+vendor/
+
+# Scratch from the initial teardown
+.work/
+
+# Infor's distribution is never committed
+*.jar
+!resources/*.jar
+
+# macOS / editor noise
+.DS_Store
+__pycache__/
+*.pyc
+
+# leftover verification scratch
+.work-verify.class
+
+# Infor artwork is generated at build time from the installer
+*.ico
+*.icns
